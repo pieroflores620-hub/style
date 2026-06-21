@@ -25,7 +25,28 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const supabaseUrl = "TU_URL";
+const supabaseKey = "TU_ANON_KEY";
+
+const supabase = window.supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
+</script><script>
+async function cargarProductos() {
+
+ const { data, error } = await supabase
+   .from('productos')
+   .select('*');
+
+ console.log(data);
+}
+
+cargarProductos();
+</script>
   /* ===== NAV ===== */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
