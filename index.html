@@ -1115,35 +1115,6 @@ confirmOrder = function() {
   setTimeout(()=>openBolLanding(order), 300);
   showConfirmBanner(`¡Pedido #${order.id.slice(-6)} recibido! Te contactaremos al ${phone}.`);
 };
- <body>
-
-  <!-- 1. Librería Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- 2. Inicializar Supabase -->
   <script>
-    const supabaseUrl = "TU_URL";
-    const supabaseKey = "TU_ANON_KEY";
-
-    const client = supabase.createClient(
-      supabaseUrl,
-      supabaseKey
-    );
-  </script>
-
-  <!-- 3. Función -->
-  <script>
-    async function cargarProductos() {
-
-      const { data, error } = await client
-        .from('productos')
-        .select('*');
-
-      console.log(data);
-    }
-
-    cargarProductos();
-  </script>
-
 </body>
 </html>
